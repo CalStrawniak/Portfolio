@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cal Strawniak, Video Editor</title>
+<meta name="description" content="Video editor in Milwaukee. Premiere Pro and After Effects edits for social, commercial, and corporate video.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#18181B;--panel:#232326;--head:#2D2D32;--line:#3A3A41;--ink:#ECECF1;--mute:#A0A0AC;--accent:#A9A9FF;--onaccent:#14141C;--ph:#1F78D1;--c1:#5F56B8;--c2:#7B4F96;--c3:#2F7A58;--c4:#A8456F;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%;scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:radial-gradient(60rem 30rem at 50% -8rem,#34306E 0%,transparent 70%) no-repeat top center,var(--bg);color:var(--ink);font:400 1.0625rem/1.65 -apple-system,BlinkMacSystemFont,"SF Pro Text","Inter",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:64rem;margin:0 auto;padding:0 1rem}
+h1,h2,h3{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter",system-ui,sans-serif;margin:0}
+h1{font-size:clamp(3rem,10vw,6.5rem);font-weight:700;line-height:1.02;letter-spacing:-.045em}
+h2{font-size:clamp(1.6rem,3.2vw,2.3rem);font-weight:600;line-height:1.1;letter-spacing:-.03em;margin-bottom:1rem}
+p{margin:0 0 1rem;max-width:40rem}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,.lanes:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:.3rem}
+.top{display:flex;justify-content:space-between;align-items:center;margin-top:1rem;padding:.7rem 1rem;background:var(--head);border:1px solid var(--line);border-radius:.5rem;font-size:.95rem}
+.top strong{font-weight:600}
+.top nav{display:flex;gap:1.25rem}
+.top nav a{color:var(--mute)}
+.top nav a:hover{color:var(--ink);text-decoration:none}
+.hero{padding:4.5rem 0 2rem;text-align:center}
+.hero h1{margin:0 auto}
+.hero p.lead{font-size:1.4rem;line-height:1.45;margin:1.5rem auto 0;color:var(--mute);max-width:34rem}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
+.btn{display:inline-block;padding:.75rem 1.4rem;border-radius:.4rem;font-weight:500;background:var(--head);border:1px solid var(--line);color:var(--ink)}
+.btn.main{background:var(--accent);border-color:var(--accent);color:var(--onaccent)}
+.btn:hover{opacity:.85;text-decoration:none}
+[data-title]{position:relative;padding-top:2.75rem;overflow:hidden}
+[data-title]::before{content:attr(data-title);position:absolute;top:0;left:0;right:0;height:2rem;padding:0 1rem;display:flex;align-items:center;background:var(--head);border-bottom:1px solid var(--line);color:var(--accent);font-size:.8rem;font-weight:500;text-align:left}
+.tl{margin:3rem auto 0;max-width:56rem;background:var(--panel);border:1px solid var(--line);border-radius:.5rem;padding:1rem;text-align:left}
+.row{display:grid;grid-template-columns:4.5rem 1fr;gap:.5rem;align-items:center;margin:.4rem 0}
+.row>span{font-size:.8rem;color:var(--mute)}
+.lane{position:relative;height:2.4rem;background:#1B1B1E;border-radius:.3rem}
+.lane i{position:absolute;top:3px;bottom:3px;border-radius:.25rem;font-size:.75rem;font-weight:500;line-height:1;font-style:normal;color:#fff;display:flex;align-items:center;padding:0 .5rem;white-space:nowrap;overflow:hidden;box-shadow:inset 0 3px 0 rgba(255,255,255,.2)}
+.c1{background:var(--c1)}.c2{background:var(--c2)}.c3{background:var(--c3)}.c4{background:var(--c4)}
+.lanes{position:relative;touch-action:pan-y;cursor:ew-resize}
+.lanes::before{content:"";display:block;height:1.1rem;margin:0 0 .35rem 5rem;background:repeating-linear-gradient(90deg,var(--mute) 0 1px,transparent 1px 5%) bottom/100% 45% no-repeat}
+.ph{position:absolute;top:-.25rem;bottom:-.25rem;left:4.5rem;width:2px;background:var(--ph);pointer-events:none}
+.ph b{position:absolute;top:0;left:0;transform:translateX(-50%);background:var(--ph);color:#fff;font-size:.72rem;font-weight:600;line-height:1;padding:.3rem .45rem;border-radius:.2rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+.hint{font-size:.9rem;color:var(--mute);margin:1rem auto 0;text-align:center}
+section{margin:1rem 0;padding:2.75rem 2rem 3rem;background:var(--panel);border:1px solid var(--line);border-radius:.5rem}
+#reel,#showreel,#process,#contact,#work{text-align:center}
+#reel p,#showreel p,#process p,#contact p{margin-left:auto;margin-right:auto;color:var(--mute)}
+.player{position:relative;aspect-ratio:16/9;border-radius:.4rem;overflow:hidden;background:#000;margin:1.5rem auto 1rem;max-width:58rem;border:1px solid var(--line)}
+.player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.player.li{aspect-ratio:auto;height:36rem;max-width:34rem}
+.work h2{margin-bottom:1.5rem}
+.work a.item{display:grid;grid-template-columns:1fr auto;gap:.2rem 1.5rem;padding:1.1rem 1rem;margin:0 auto .5rem;background:var(--head);border:1px solid var(--line);border-radius:.4rem;color:var(--ink);text-align:left;max-width:48rem}
+.work a.item:hover{text-decoration:none;border-color:var(--accent)}
+.work h3{font-size:1.25rem;font-weight:600;letter-spacing:-.02em}
+.work h3::before{content:"";display:inline-block;width:1.1rem;height:.8rem;border-radius:.15rem;background:var(--c1);margin-right:.65rem}
+.work a.item:nth-of-type(2) h3::before{background:var(--c4)}
+.work a.item:nth-of-type(3) h3::before{background:var(--c3)}
+.work p{margin:0;color:var(--mute);grid-column:1}
+.work .go{grid-column:2;grid-row:1/3;align-self:center;font-weight:500;color:var(--accent)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:.75rem;list-style:none;margin:2rem 0 0;padding:0;text-align:left}
+.steps li{background:var(--head);border:1px solid var(--line);border-radius:.4rem;padding:1rem}
+.steps strong{display:block;font-size:1.1rem;font-weight:600;margin-bottom:.25rem}
+.steps span{color:var(--mute)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.tools{list-style:none;padding:0;margin:0}
+.tools li{padding:.5rem 0;border-bottom:1px solid var(--line)}
+.tools li::before{content:"fx";font:italic 600 .8rem Georgia,serif;color:var(--accent);margin-right:.75rem}
+.contact h2{font-size:clamp(1.8rem,4vw,2.8rem)}
+.contact .btns{margin-top:1.5rem}
+.foot{padding:1.5rem 0 3rem;color:var(--mute);font-size:.85rem;text-align:center}
+@media (max-width:640px){section{padding:2.75rem 1.25rem 2rem}.hero{padding-top:3rem}.two{grid-template-columns:1fr;gap:2rem}.row{grid-template-columns:3.2rem 1fr}.lanes::before{margin-left:3.7rem}.ph{left:3.2rem}.work a.item{grid-template-columns:1fr}.work .go{grid-column:1;grid-row:auto}.player.li{height:34rem}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* panel refinements */
+[data-title]::before,[data-title]::after{display:none}
+section[data-title]{padding:2.25rem 1.75rem}
+[data-title]::after{content:"\2261";position:absolute;top:0;left:0;right:0;height:2rem;background:var(--head);border-bottom:1px solid var(--line);text-align:right;padding:.3rem .9rem 0;color:var(--mute);font-size:.95rem;line-height:1.4}
+[data-title]::before{content:attr(data-title);position:absolute;top:0;left:1rem;right:auto;height:2rem;padding:0 .15rem;z-index:1;background:none;border-bottom:2px solid var(--accent);color:var(--ink);font-size:.8rem;font-weight:500}
+#reel,#showreel,#process,#contact,#work{text-align:left}
+#reel p,#showreel p,#process p,#contact p{margin-left:0;margin-right:0}
+section h2{font-size:1.5rem;letter-spacing:-.02em;margin-bottom:.75rem}
+.contact h2{font-size:1.75rem}
+.player{max-width:none;margin:1.25rem 0 1rem}
+.player.li{max-width:34rem;margin-left:auto;margin-right:auto}
+.work .cols{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.5fr) 7rem;gap:1rem;padding:.4rem 1rem;margin-top:1.25rem;background:var(--head);border:1px solid var(--line);border-bottom:0;border-radius:.4rem .4rem 0 0;font-size:.78rem;color:var(--mute)}
+.work a.item{grid-template-columns:minmax(0,1.1fr) minmax(0,1.5fr) 7rem;gap:1rem;align-items:center;max-width:none;margin:0;padding:.8rem 1rem;background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0}
+.work a.item:nth-of-type(even){background:#29292D}
+.work a.item:last-of-type{border-radius:0 0 .4rem .4rem}
+.work a.item:hover{background:#2C3F5E;border-color:var(--line)}
+.work h3{grid-column:1;font-size:1rem;font-weight:500;letter-spacing:0}
+.work p{grid-column:2;font-size:.95rem}
+.work .go{grid-column:3;grid-row:auto;font-size:.9rem}
+.steps{gap:.5rem;margin-top:1.25rem}
+.steps li{border-top:4px solid var(--c1)}
+.steps li:nth-child(2){border-top-color:var(--c2)}
+.steps li:nth-child(3){border-top-color:var(--c3)}
+.steps li:nth-child(4){border-top-color:var(--c4)}
+.two{display:grid;grid-template-columns:1.6fr 1fr;gap:1rem;margin:1rem 0;padding:0;background:none;border:0}
+.two section{margin:0}
+.kv{margin:1.25rem 0 1.5rem;border:1px solid var(--line);border-radius:.4rem;overflow:hidden;max-width:36rem}
+.kv>div{display:grid;grid-template-columns:6rem 1fr;gap:1rem;padding:.6rem 1rem;border-bottom:1px solid var(--line);background:var(--panel)}
+.kv>div:nth-child(odd){background:#29292D}
+.kv>div:last-child{border-bottom:0}
+.kv dt{color:var(--mute);font-size:.9rem}
+.kv dd{margin:0;overflow-wrap:anywhere}
+.contact .btns{justify-content:flex-start;margin-top:0}
+@media (max-width:640px){section[data-title]{padding:1.75rem 1.1rem}.two{grid-template-columns:1fr}.work .cols{display:none}.work a.item{grid-template-columns:1fr;gap:.15rem;border-top:1px solid var(--line);margin-top:.5rem;border-radius:.4rem}.work h3,.work p,.work .go{grid-column:1}.work .go{margin-top:.25rem}.kv>div{grid-template-columns:5rem 1fr}}
+
+/* v5: Apple polish over the workspace elements */
+.tools li::before,.work h3::before{display:none}
+:root{--card:rgba(255,255,255,.055);--stroke:rgba(255,255,255,.1)}
+body{text-rendering:optimizeLegibility;font-feature-settings:"kern","liga"}
+.wrap{padding:0 1.5rem}
+.top{background:none;border:0;border-radius:0;padding:.5rem 0;margin-top:1rem}
+.hero{padding:5rem 0 2rem}
+.btn{border-radius:980px;background:var(--card);border:1px solid var(--stroke)}
+.btn.main{background:var(--accent);border-color:var(--accent);color:var(--onaccent)}
+.tl{background:var(--card);border:1px solid var(--stroke);border-radius:1.5rem;padding:1.25rem;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.lane{background:rgba(255,255,255,.05);border-radius:.5rem}
+.lane i{border-radius:.4rem}
+section,section[data-title]{margin:0;padding:5.5rem 0;background:none;border:0;border-radius:0}
+#reel,#showreel,#process,#contact,#work{text-align:center}
+#reel p,#showreel p,#process p,#contact p{margin-left:auto;margin-right:auto}
+section h2{font-size:clamp(2rem,4.5vw,3.25rem);font-weight:600;letter-spacing:-.035em;margin-bottom:1rem}
+.contact h2{font-size:clamp(2.2rem,5.5vw,4rem)}
+.player{max-width:58rem;margin:2.25rem auto 1rem;border:0;border-radius:1.5rem;box-shadow:0 0 0 1px var(--stroke),0 30px 70px rgba(0,0,0,.55)}
+.player.li{max-width:34rem}
+.work .cols{display:none}
+.work a.item{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.5fr) 8rem;gap:1rem;align-items:center;max-width:48rem;margin:0 auto;padding:1.25rem .25rem;background:none;border:0;border-bottom:1px solid var(--stroke);border-radius:0;text-align:left}
+.work a.item:first-of-type{border-top:1px solid var(--stroke)}
+.work a.item:nth-of-type(even){background:none}
+.work a.item:hover{background:none;border-color:var(--stroke)}
+.work a.item:hover h3{color:var(--accent)}
+.work h2{margin-bottom:2.25rem}
+.work h3{font-size:1.15rem;font-weight:600;letter-spacing:-.01em}
+.work h3::before{border-radius:.25rem}
+.work .go{text-align:right}
+.steps{gap:1rem;margin-top:2.5rem}
+.steps li,.steps li:nth-child(n){background:var(--card);border:1px solid var(--stroke);border-radius:1.25rem;padding:1.4rem}
+.steps li::before{content:"";display:block;height:6px;width:2.25rem;border-radius:3px;background:var(--c1);margin-bottom:1rem}
+.steps li:nth-child(2)::before{background:var(--c2)}
+.steps li:nth-child(3)::before{background:var(--c3)}
+.steps li:nth-child(4)::before{background:var(--c4)}
+.two{display:grid;grid-template-columns:1.5fr 1fr;gap:4rem;margin:0;padding:0;background:none;border:0;align-items:start}
+.two section{text-align:left;padding:0}
+.two section:last-child{background:var(--card);border:1px solid var(--stroke);border-radius:1.5rem;padding:1.75rem}
+.two h2{font-size:1.75rem;margin-bottom:1rem}
+.tools li{border-bottom:1px solid var(--stroke)}
+.tools li:last-child{border-bottom:0}
+.kv{max-width:34rem;margin:2rem auto 1.75rem;background:var(--card);border:1px solid var(--stroke);border-radius:1.25rem;text-align:left}
+.kv>div,.kv>div:nth-child(odd){background:none;border-bottom:1px solid var(--stroke)}
+.kv>div:last-child{border-bottom:0}
+.contact .btns{justify-content:center}
+@media (max-width:640px){.lane i{white-space:normal;font-size:.62rem;line-height:1.05;padding:0 .3rem}.lane i[style*="width:6%"]{padding:0;justify-content:center}section,section[data-title]{padding:3.5rem 0}.two{grid-template-columns:1fr;gap:2.5rem}.work a.item{grid-template-columns:1fr;gap:.15rem}.work h3,.work p,.work .go{grid-column:1}.work .go{text-align:left;margin-top:.25rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><strong>Cal Strawniak</strong><nav><a href="#showreel">Reel</a><a href="#work">Work</a><a href="#process">Process</a><a href="#contact">Contact</a></nav></header>
+
+<main>
+<div class="hero">
+<h1>Video editing portfolio</h1>
+<p class="lead">I’m Cal, a video editor in Milwaukee. I cut social, commercial, and corporate video in Premiere Pro and After Effects.</p>
+
+
+<div class="tl" data-title="Timeline: Sequence 01" aria-label="Editing timeline you can scrub with your pointer or arrow keys">
+<div class="lanes" id="lanes" tabindex="0" role="slider" aria-label="Timeline position" aria-valuemin="0" aria-valuemax="30" aria-valuenow="0">
+<div class="row"><span>Motion</span><div class="lane"><i class="c4" style="left:4%;width:16%">Title build</i><i class="c4" style="left:44%;width:12%">Lower third</i><i class="c4" style="left:74%;width:22%">End card</i></div></div>
+<div class="row"><span>Picture</span><div class="lane"><i class="c1" style="left:0;width:14%">Hook</i><i class="c2" style="left:15%;width:22%">Product cut</i><i class="c1" style="left:38%;width:18%">B-roll</i><i class="c3" style="left:57%;width:17%">A-roll</i><i class="c2" style="left:75%;width:25%">Call to action</i></div></div>
+<div class="row"><span>Sound</span><div class="lane"><i class="c3" style="left:0;width:100%">Music bed, mixed under voice</i></div></div>
+<div class="row"><span>Effects</span><div class="lane"><i class="c4" style="left:13%;width:6%">Hit</i><i class="c4" style="left:36%;width:6%">Hit</i><i class="c4" style="left:72%;width:6%">Hit</i></div></div>
+<div class="ph" id="ph"><b id="tc">00:00:00:00</b></div>
+</div>
+<p class="hint">Scrub it. This is how I think about every cut: picture, motion, and sound built together.</p>
+</div>
+</div>
+
+<section id="showreel" data-title="Program: Showreel">
+<h2>Showreel</h2>
+<p>A showreel built like one big ad, to show my pacing, effects, and what I can do in an edit.</p>
+<div class="player"><iframe src="https://www.youtube-nocookie.com/embed/vEE_-BSyA2Q?rel=0" title="Cal Strawniak showreel" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+<p><a href="https://www.youtube.com/watch?v=vEE_-BSyA2Q">Watch on YouTube</a> if the player doesn’t load.</p>
+</section>
+
+<section id="reel" data-title="Program: GSE Worldwide">
+<h2>Recent freelance work</h2>
+<p>A recent edit for GSE Worldwide, from the James Beard Awards.</p>
+<div class="player li"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7475295183077744640" title="GSE Worldwide at the James Beard Awards" loading="lazy" allowfullscreen></iframe></div>
+<p><a href="https://www.linkedin.com/posts/gseworldwide_jamesbeardawards-activity-7475295183077744640-5ntE">View the post on LinkedIn</a> if the video doesn’t load.</p>
+</section>
+
+<section id="work" class="work" data-title="Project: Selected work">
+<h2>Selected work</h2>
+<div class="cols"><span>Name</span><span>Description</span><span>Link</span></div>
+<a class="item" href="https://www.tiktok.com/@stacyadamsstyle/video/7301808501335215406">
+<h3>Short-form social edit</h3><p>Vertical video cut for TikTok, paced for scrolling.</p><span class="go">Watch on TikTok</span></a>
+<a class="item" href="https://www.tiktok.com/t/ZP8f1JD4e/">
+<h3>Social campaign clip</h3><p>Quick-turn content, from the same short-form workflow.</p><span class="go">Watch on TikTok</span></a>
+
+
+</section>
+
+<section id="process" data-title="Timeline: Workflow">
+<h2>How a project runs</h2>
+<ol class="steps">
+<li><strong>Brief</strong><span>You send footage, references, and where the video will run.</span></li>
+<li><strong>Rough cut</strong><span>I build the structure and pacing first.</span></li>
+<li><strong>Refine</strong><span>We adjust the cut, motion, color, and sound together.</span></li>
+<li><strong>Delivery</strong><span>Final files, sized for every platform you need.</span></li>
+</ol>
+</section>
+
+<div class="two">
+<section data-title="Info: About">
+<h2>About</h2>
+<p>Hey there! I’m Cal, a 2023 BFA Film graduate from the University of Wisconsin–Milwaukee. I’m passionate about visual storytelling and creating engaging content that connects with audiences.</p>
+<p>My hands-on experience includes photography at Jostens and producing video content for social media and marketing campaigns at Weyco Group. I love diving into any creative challenge, from quick social clips to immersive visual experiences.</p>
+<p>Through customer-facing roles, I discovered how much satisfaction I get from helping others. Video editing lets me bring that same mindset into a creative space, helping brands tell their stories clearly while connecting with their audience.</p>
+<p><a href="https://cdn.gamma.app/2kw6zfdzufhxe2e/5be83768239e4f72985e7e2785de849c/file/Calvin_Strawniak_Resume_Updated.pdf">Download my resume (PDF)</a></p>
+</section>
+<section data-title="Effect Controls: Tools">
+<h2>Tools</h2>
+<ul class="tools"><li>Adobe Premiere Pro</li><li>After Effects</li><li>Photoshop</li><li>Final Cut Pro</li><li>DaVinci Resolve (color)</li><li>Sound design and mixing</li></ul>
+</section>
+</div>
+
+<section id="contact" class="contact" data-title="Export Settings">
+<h2>Have a video that needs cutting?</h2>
+<p>Email me a link to your footage, a reference video you like, where it will be posted, and your deadline. I’ll reply with a quote.</p>
+<dl class="kv"><div><dt>Email</dt><dd><a href="mailto:cstrawniak@me.com?subject=Video%20project%20inquiry">cstrawniak@me.com</a></dd></div><div><dt>TikTok</dt><dd><a href="https://www.tiktok.com/@calycocaly">@calycocaly</a></dd></div><div><dt>YouTube</dt><dd><a href="https://youtube.com/@calvinstrawniak3743">Cal Strawniak on YouTube</a></dd></div></dl>
+<div class="btns"><a class="btn main" href="mailto:cstrawniak@me.com?subject=Video%20project%20inquiry">Email me</a></div>
+</section>
+</main>
+<footer class="foot">© 2026 Calvin Strawniak</footer>
+</div>
+
+<script>
+(function(){
+var L=document.getElementById('lanes'),P=document.getElementById('ph'),T=document.getElementById('tc');
+var lane=L.querySelector('.lane'),pos=0,raf=null;
+function set(p){
+  pos=Math.max(0,Math.min(1,p));
+  var r=lane.getBoundingClientRect(),lr=L.getBoundingClientRect();
+  P.style.left=(r.left-lr.left+pos*r.width)+'px';
+  var f=Math.round(pos*30*30),s=Math.floor(f/30),ff=f%30;
+  T.textContent='00:00:'+String(s).padStart(2,'0')+':'+String(ff).padStart(2,'0');
+  L.setAttribute('aria-valuenow',s);
+}
+function stop(){if(raf){cancelAnimationFrame(raf);raf=null}}
+function fromX(x){var r=lane.getBoundingClientRect();set((x-r.left)/r.width)}
+L.addEventListener('pointerdown',function(e){stop();fromX(e.clientX)});
+L.addEventListener('pointermove',function(e){if(e.pointerType==='mouse'||e.buttons){stop();fromX(e.clientX)}});
+L.addEventListener('keydown',function(e){
+  if(e.key==='ArrowRight'){stop();set(pos+.03);e.preventDefault()}
+  if(e.key==='ArrowLeft'){stop();set(pos-.03);e.preventDefault()}
+});
+window.addEventListener('resize',function(){set(pos)});
+set(0);
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  var t0=null,dur=2600,end=.62;
+  (function step(ts){
+    if(t0===null)t0=ts;
+    var k=Math.min(1,(ts-t0)/dur);
+    set(end*(1-Math.pow(1-k,3)));
+    if(k<1)raf=requestAnimationFrame(step);else raf=null;
+  })(performance.now());
+}else{set(.62)}
+})();
+</script>
+</body>
+</html>
